@@ -15,6 +15,6 @@ public class GreetingsListener {
     private final Logger log = LoggerFactory.getLogger(Greetings.class);
     @StreamListener(GreetingsStreams.INPUT)
     public void handleGreetings(@Payload Greetings greetings) {
-        log.info("Received greetings: {}", greetings);
+        log.info("Received greetings:  ", greetings);
     }
 }
