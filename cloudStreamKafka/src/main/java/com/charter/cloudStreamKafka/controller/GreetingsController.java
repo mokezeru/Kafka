@@ -3,6 +3,7 @@ package com.charter.cloudStreamKafka.controller;
 import com.charter.cloudStreamKafka.model.Greetings;
 import com.charter.cloudStreamKafka.service.GreetingsService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -18,9 +19,10 @@ public class GreetingsController {
 
     @GetMapping("/greetings")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void greetings(@RequestParam("message") String message) {
+    public ResponseEntity<?> greetings(@RequestParam("message") String message) {
         Greetings greetings = new Greetings(System.currentTimeMillis(), message);
-
         greetingsService.sendGreeting(greetings);
+
+        return new ResponseEntity<>(greetings + " Sent to Kafka", HttpStatus.OK);
     }
 }

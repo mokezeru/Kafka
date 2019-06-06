@@ -22,7 +22,7 @@ public class GreetingsService {
     }
 
     public void sendGreeting(final Greetings greetings) {
-        log.info("Sending greetings:  ", greetings);
+        log.info("Sending greetings:  " + greetings);
 
         MessageChannel messageChannel = greetingsStreams.outboundGreetings();
         messageChannel.send(MessageBuilder
