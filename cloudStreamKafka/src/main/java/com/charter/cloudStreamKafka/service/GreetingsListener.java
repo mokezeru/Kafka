@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class GreetingsListener {
-    private final Logger log = LoggerFactory.getLogger(Greetings.class);
+    private final Logger log = LoggerFactory.getLogger(GreetingsListener.class);
     @StreamListener(GreetingsStreams.INPUT)
     public void handleGreetings(@Payload Greetings greetings) {
 

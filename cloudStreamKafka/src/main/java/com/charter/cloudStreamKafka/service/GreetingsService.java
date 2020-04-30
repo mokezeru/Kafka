@@ -16,7 +16,7 @@ import org.springframework.util.MimeTypeUtils;
 @Slf4j
 public class GreetingsService {
     private final GreetingsStreams greetingsStreams;
-    private final Logger log = LoggerFactory.getLogger(Greetings.class);
+    private final Logger log = LoggerFactory.getLogger(GreetingsService.class);
     public GreetingsService(GreetingsStreams greetingsStreams) {
         this.greetingsStreams = greetingsStreams;
     }
